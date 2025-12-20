@@ -1,0 +1,29 @@
+{
+  "name": "seasoned",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
+  },
+  "lint-staged": {
+    "entree/**/*.{ts,tsx,js,jsx}": [
+      "cd entree && eslint --fix",
+      "cd entree && prettier --write"
+    ],
+    "ingredients/**/*.{ts,tsx,js,jsx}": [
+      "cd ingredients && eslint --fix",
+      "cd ingredients && prettier --write"
+    ],
+    "entree/**/*.{json,css,scss,md}": [
+      "cd entree && prettier --write"
+    ],
+    "ingredients/**/*.{json,css,scss,md}": [
+      "cd ingredients && prettier --write"
+    ]
+  }
+}
